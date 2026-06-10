@@ -1,0 +1,42 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{827E0CD3-B72D-47B6-A68D-7590B98EB39B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "order-service", "order-service", "{97052A33-A349-3B4B-C8E7-F726E06681CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderService", "src\order-service\OrderService.csproj", "{71C9F26E-9BEC-6450-26C1-50C28AAEFA4A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "payment-service", "payment-service", "{9AF8A280-ED45-CF6D-9016-4AB86B0E6FA7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaymentService", "src\payment-service\PaymentService.csproj", "{3CFB1893-B67F-853E-C96A-E988A8665D08}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{71C9F26E-9BEC-6450-26C1-50C28AAEFA4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71C9F26E-9BEC-6450-26C1-50C28AAEFA4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71C9F26E-9BEC-6450-26C1-50C28AAEFA4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71C9F26E-9BEC-6450-26C1-50C28AAEFA4A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CFB1893-B67F-853E-C96A-E988A8665D08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CFB1893-B67F-853E-C96A-E988A8665D08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CFB1893-B67F-853E-C96A-E988A8665D08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CFB1893-B67F-853E-C96A-E988A8665D08}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{97052A33-A349-3B4B-C8E7-F726E06681CC} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
+		{71C9F26E-9BEC-6450-26C1-50C28AAEFA4A} = {97052A33-A349-3B4B-C8E7-F726E06681CC}
+		{9AF8A280-ED45-CF6D-9016-4AB86B0E6FA7} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
+		{3CFB1893-B67F-853E-C96A-E988A8665D08} = {9AF8A280-ED45-CF6D-9016-4AB86B0E6FA7}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1CCCB7A1-3060-42C3-9EDA-91B29E824C76}
+	EndGlobalSection
+EndGlobal

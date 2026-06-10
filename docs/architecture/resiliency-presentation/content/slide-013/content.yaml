@@ -1,0 +1,117 @@
+slide: 13
+title: "Why HVE Agents? Not Just GitHub Copilot"
+layout: content
+background:
+  fill: "#0F1117"
+elements:
+  - type: shape
+    shape: rectangle
+    left: 0
+    top: 0
+    width: 13.333
+    height: 0.08
+    fill: "#0078D4"
+
+  - type: textbox
+    left: 0.5
+    top: 0.18
+    width: 12.0
+    height: 0.55
+    text: "Why HVE Agents? Not Just GitHub Copilot"
+    font: "Segoe UI"
+    font_size: 26
+    font_color: "#F8F8FC"
+    font_bold: true
+    alignment: left
+
+  - type: table
+    left: 0.4
+    top: 0.9
+    width: 12.5
+    height: 5.8
+    columns:
+      - width: 3.2
+      - width: 4.65
+      - width: 4.65
+    rows:
+      - cells:
+          - text: "Dimension"
+            font_bold: true
+            fill: "#0078D4"
+            font_color: "#F8F8FC"
+          - text: "Default GitHub Copilot"
+            font_bold: true
+            fill: "#0078D4"
+            font_color: "#F8F8FC"
+          - text: "HVE Agents + Resiliency Skill"
+            font_bold: true
+            fill: "#0078D4"
+            font_color: "#F8F8FC"
+      - cells:
+          - text: "Workflow"
+            font_bold: true
+            font_color: "#9CA3AF"
+          - text: "Single prompt → single response. No sequencing."
+            font_color: "#F8F8FC"
+          - text: "4-phase pipeline enforced. Phases cannot be skipped."
+            font_color: "#10B981"
+      - cells:
+          - text: "Evidence Quality"
+            font_bold: true
+            font_color: "#9CA3AF"
+          - text: "May suggest issues without code citations. Hallucination risk."
+            font_color: "#EF4444"
+          - text: "Every finding requires file path + line number. No citation = rejected."
+            font_color: "#10B981"
+      - cells:
+          - text: "Output Persistence"
+            font_bold: true
+            font_color: "#9CA3AF"
+          - text: "Lives in chat only. Lost after session ends."
+            font_color: "#EF4444"
+          - text: "Written to .copilot-tracking/. Survives sessions. Auditable."
+            font_color: "#10B981"
+      - cells:
+          - text: "Scope Control"
+            font_bold: true
+            font_color: "#9CA3AF"
+          - text: "Analyzes everything it sees. No service exclusion logic."
+            font_color: "#F59E0B"
+          - text: "Service Exclusion Rule: only confirmed dependencies analyzed. No noise."
+            font_color: "#10B981"
+      - cells:
+          - text: "Research vs. Planning"
+            font_bold: true
+            font_color: "#9CA3AF"
+          - text: "Mixes findings and recommendations in one response."
+            font_color: "#EF4444"
+          - text: "Phases 1-3 are evidence-only. Phase 4 is planning-only. Clean separation."
+            font_color: "#10B981"
+      - cells:
+          - text: "Priority Framework"
+            font_bold: true
+            font_color: "#9CA3AF"
+          - text: "No structured priority. All issues presented equally."
+            font_color: "#F59E0B"
+          - text: "P0 (failover-blocking) through P3 enforced on every finding."
+            font_color: "#10B981"
+      - cells:
+          - text: "Reproducibility"
+            font_bold: true
+            font_color: "#9CA3AF"
+          - text: "Different engineer = different output. No consistency guarantee."
+            font_color: "#EF4444"
+          - text: "Same prompts. Same structure. Re-run after each sprint to verify fixes."
+            font_color: "#10B981"
+      - cells:
+          - text: "Audience Targeting"
+            font_bold: true
+            font_color: "#9CA3AF"
+          - text: "One response serves all audiences — or none well."
+            font_color: "#F59E0B"
+          - text: "3 structured outputs: Leadership, Engineering, Architecture Board."
+            font_color: "#10B981"
+    first_row: true
+    horz_banding: true
+
+speaker_notes: "The fundamental difference is trust. Default Copilot is powerful but unstructured — it can tell you there's a problem but can't prove it. HVE Agents enforce an evidence-only contract across every phase. Every finding cites a file and a line. An architecture board can challenge any finding and get a specific code reference back. That's what makes these outputs board-ready rather than chat-ready."

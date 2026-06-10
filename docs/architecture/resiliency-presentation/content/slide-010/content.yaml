@@ -1,0 +1,105 @@
+slide: 10
+title: "Three Deliverables Built for Three Audiences"
+section: "Deliverables"
+layout: "content"
+
+background:
+  fill: "#0F1117"
+
+elements:
+  # Top accent bar
+  - type: shape
+    shape: rectangle
+    left: 0
+    top: 0
+    width: 13.333
+    height: 0.08
+    fill: "#0078D4"
+
+  # Slide title
+  - type: textbox
+    left: 0.5
+    top: 0.15
+    width: 12.333
+    height: 0.55
+    text: "Three Deliverables Built for Three Audiences"
+    font: "Segoe UI"
+    font_size: 28
+    font_color: "#F8F8FC"
+    font_bold: true
+    alignment: left
+
+  # Card 1 — MASTER REPORT
+  - type: card
+    left: 0.5
+    top: 0.88
+    width: 3.978
+    height: 6.2
+    title: "MASTER REPORT"
+    title_color: "#F8F8FC"
+    title_size: 14
+    title_bold: true
+    accent_bar: true
+    accent_color: "#0078D4"
+    content:
+      - bullet: "Audience: Leadership / Architecture Board"
+        color: "#0078D4"
+      - bullet: "Executive summary and prioritized finding matrix"
+        color: "#F8F8FC"
+      - bullet: "Dependency map and open questions"
+        color: "#9CA3AF"
+      - bullet: "External provider considerations"
+        color: "#9CA3AF"
+      - bullet: "Format: P0→P3 with business impact language"
+        color: "#9CA3AF"
+
+  # Card 2 — DEVELOPER GUIDE
+  - type: card
+    left: 4.678
+    top: 0.88
+    width: 3.978
+    height: 6.2
+    title: "DEVELOPER GUIDE"
+    title_color: "#F8F8FC"
+    title_size: 14
+    title_bold: true
+    accent_bar: true
+    accent_color: "#10B981"
+    content:
+      - bullet: "Audience: Engineering Teams"
+        color: "#10B981"
+      - bullet: "File+line evidence for every finding"
+        color: "#F8F8FC"
+      - bullet: "Current code blocks and fix code blocks"
+        color: "#9CA3AF"
+      - bullet: "Health probe contracts and testing notes"
+        color: "#9CA3AF"
+      - bullet: "Format: Self-contained — no architect needed to interpret"
+        color: "#9CA3AF"
+
+  # Card 3 — CODE-LEVEL ASSESSMENT
+  - type: card
+    left: 8.856
+    top: 0.88
+    width: 3.978
+    height: 6.2
+    title: "CODE-LEVEL ASSESSMENT"
+    title_color: "#F8F8FC"
+    title_size: 14
+    title_bold: true
+    accent_bar: true
+    accent_color: "#F59E0B"
+    content:
+      - bullet: "Audience: Architect Review Board"
+        color: "#F59E0B"
+      - bullet: "WAF alignment and IaC gap analysis"
+        color: "#F8F8FC"
+      - bullet: "Full finding matrix with standards references"
+        color: "#9CA3AF"
+      - bullet: "Microsoft Standards and reference architecture links"
+        color: "#9CA3AF"
+      - bullet: "Format: Review-board ready, TOC-navigable"
+        color: "#9CA3AF"
+
+speaker_notes: |
+  The skill produces three distinct documents tailored to three different audiences. Leadership gets the Master Report. Engineering teams get the Developer Guide they can execute independently. The Architecture Review Board gets the WAF-aligned Code-Level Assessment with standards references. One run of the skill — three audiences served.

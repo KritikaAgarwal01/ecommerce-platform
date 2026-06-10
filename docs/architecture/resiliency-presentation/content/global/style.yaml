@@ -1,0 +1,40 @@
+# Slide dimensions
+dimensions:
+  width_inches: 13.333
+  height_inches: 7.5
+  format: "16:9"
+
+# Presentation metadata
+metadata:
+  title: "AI-Driven Resiliency Research"
+  author: "GitHub Copilot"
+  subject: "HVE Resiliency Research Skill — End-to-End Automation for Architects"
+  keywords: "resiliency, copilot, skills, HVE, ecommerce-platform, automation"
+  category: "Architecture"
+
+# Default element styling
+defaults:
+  title_bar:
+    height_inches: 0.08
+    color: "#0078D4"
+    top_inches: 0
+  card:
+    fill: "#1A1D27"
+    corner_radius_inches: 0.1
+    border_color: "#2D3148"
+    border_width_pt: 1
+  speaker_notes_required: true
+
+# Visual theme
+themes:
+  - name: "dark"
+    slides: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+    colors:
+      bg_dark: "#0F1117"
+      bg_card: "#1A1D27"
+      text_primary: "#F8F8FC"
+      text_secondary: "#9CA3AF"
+      accent_blue: "#0078D4"
+      accent_green: "#10B981"
+      accent_amber: "#F59E0B"
+      accent_red: "#EF4444"

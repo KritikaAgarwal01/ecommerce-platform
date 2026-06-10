@@ -1,0 +1,178 @@
+slide: 8
+title: "22 Findings. Every One Backed by Evidence."
+section: "Results"
+layout: "content"
+
+background:
+  fill: "#0F1117"
+
+elements:
+  # Top accent bar
+  - type: shape
+    shape: rectangle
+    left: 0
+    top: 0
+    width: 13.333
+    height: 0.08
+    fill: "#0078D4"
+
+  # Slide title
+  - type: textbox
+    left: 0.5
+    top: 0.15
+    width: 12.333
+    height: 0.55
+    text: "22 Findings. Every One Backed by Evidence."
+    font: "Segoe UI"
+    font_size: 28
+    font_color: "#F8F8FC"
+    font_bold: true
+    alignment: left
+
+  # Stat card 1 — P0 CRITICAL
+  - type: card
+    left: 0.5
+    top: 0.88
+    width: 2.958
+    height: 1.7
+    title: "7"
+    title_color: "#EF4444"
+    title_size: 44
+    title_bold: true
+    accent_bar: true
+    accent_color: "#EF4444"
+    content:
+      - bullet: "P0 CRITICAL"
+        color: "#F8F8FC"
+      - bullet: "Failover-Blocking"
+        color: "#9CA3AF"
+
+  # Stat card 2 — P1 HIGH
+  - type: card
+    left: 3.658
+    top: 0.88
+    width: 2.958
+    height: 1.7
+    title: "12"
+    title_color: "#F59E0B"
+    title_size: 44
+    title_bold: true
+    accent_bar: true
+    accent_color: "#F59E0B"
+    content:
+      - bullet: "P1 HIGH"
+        color: "#F8F8FC"
+      - bullet: "Materially Increases Risk"
+        color: "#9CA3AF"
+
+  # Stat card 3 — P2 IMPROVEMENT
+  - type: card
+    left: 6.817
+    top: 0.88
+    width: 2.958
+    height: 1.7
+    title: "3"
+    title_color: "#0078D4"
+    title_size: 44
+    title_bold: true
+    accent_bar: true
+    accent_color: "#0078D4"
+    content:
+      - bullet: "P2 IMPROVEMENT"
+        color: "#F8F8FC"
+      - bullet: "Best Practice"
+        color: "#9CA3AF"
+
+  # Stat card 4 — TIERS
+  - type: card
+    left: 9.975
+    top: 0.88
+    width: 2.958
+    height: 1.7
+    title: "4"
+    title_color: "#9CA3AF"
+    title_size: 44
+    title_bold: true
+    accent_bar: true
+    accent_color: "#9CA3AF"
+    content:
+      - bullet: "TIERS"
+        color: "#F8F8FC"
+      - bullet: "Infra · App · Data · Ops"
+        color: "#9CA3AF"
+
+  # Critical finding label
+  - type: textbox
+    left: 0.5
+    top: 2.72
+    width: 12.333
+    height: 0.35
+    text: "TOP 3 CRITICAL FINDINGS  —  P0 BLOCKING"
+    font: "Segoe UI"
+    font_size: 11
+    font_color: "#EF4444"
+    font_bold: true
+    alignment: left
+
+  # Highlight card A
+  - type: card
+    left: 0.5
+    top: 3.12
+    width: 3.978
+    height: 3.7
+    title: "P0 — INFRASTRUCTURE"
+    title_color: "#F8F8FC"
+    title_size: 12
+    title_bold: true
+    accent_bar: true
+    accent_color: "#EF4444"
+    content:
+      - bullet: "No Secondary Region in IaC"
+        color: "#F8F8FC"
+      - bullet: "Nothing to fail over TO"
+        color: "#EF4444"
+      - bullet: "The IaC defines only West US — active/active is architecturally impossible until this is resolved"
+        color: "#9CA3AF"
+
+  # Highlight card B
+  - type: card
+    left: 4.678
+    top: 3.12
+    width: 3.978
+    height: 3.7
+    title: "P0 — APPLICATION"
+    title_color: "#F8F8FC"
+    title_size: 12
+    title_bold: true
+    accent_bar: true
+    accent_color: "#EF4444"
+    content:
+      - bullet: "Non-Atomic Order Creation"
+        color: "#F8F8FC"
+      - bullet: "Ghost orders + duplicate charges on any failure"
+        color: "#EF4444"
+      - bullet: "Order creation spans two databases with no distributed transaction or saga pattern"
+        color: "#9CA3AF"
+
+  # Highlight card C
+  - type: card
+    left: 8.856
+    top: 3.12
+    width: 3.978
+    height: 3.7
+    title: "P0 — RESILIENCY"
+    title_color: "#F8F8FC"
+    title_size: 12
+    title_bold: true
+    accent_bar: true
+    accent_color: "#EF4444"
+    content:
+      - bullet: "No Retry/Timeout on Inter-Service Calls"
+        color: "#F8F8FC"
+      - bullet: "One failed pod = cascading failure"
+        color: "#EF4444"
+      - bullet: "HTTP clients configured with no resilience handlers — any transient fault propagates through the call chain"
+        color: "#9CA3AF"
+
+speaker_notes: |
+  The skill surfaced 22 findings in a single run. Seven of them are P0 — they block the active/active transition entirely. The most striking finding: the IaC has no secondary region defined at all. There is literally nothing to fail over to. This would have been catastrophic to discover during a live failover drill.

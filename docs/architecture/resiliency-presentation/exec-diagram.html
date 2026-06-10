@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1600">
+<title>Resiliency Skill — Executive Diagram</title>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #0f172a;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    width: 1600px;
+    padding: 48px 56px 56px;
+  }
+  .header {
+    text-align: center;
+    margin-bottom: 36px;
+  }
+  .header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #f8fafc;
+    letter-spacing: 0.5px;
+  }
+  .header p {
+    font-size: 14px;
+    color: #94a3b8;
+    margin-top: 6px;
+    letter-spacing: 0.3px;
+  }
+  .diagram-wrap {
+    background: #1e293b;
+    border-radius: 16px;
+    padding: 40px 32px;
+    border: 1px solid #334155;
+  }
+  #diagram svg {
+    max-width: 100%;
+    height: auto;
+  }
+  .legend {
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+    margin-top: 28px;
+    flex-wrap: wrap;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: #cbd5e1;
+  }
+  .legend-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 3px;
+    flex-shrink: 0;
+  }
+  .footer {
+    text-align: center;
+    margin-top: 24px;
+    font-size: 11px;
+    color: #475569;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>HVE Resiliency Research Skill — How It Works</h1>
+  <p>Automated code-level resiliency analysis · From repository to prioritized ADO backlog · Full traceability from code line to work item</p>
+</div>
+
+<div class="diagram-wrap">
+  <div id="diagram" class="mermaid">
+%%{init: {
+  "theme": "base",
+  "themeVariables": {
+    "background": "#1e293b",
+    "primaryColor": "#1d4ed8",
+    "primaryTextColor": "#f8fafc",
+    "primaryBorderColor": "#3b82f6",
+    "lineColor": "#64748b",
+    "secondaryColor": "#0f766e",
+    "tertiaryColor": "#7c3aed",
+    "edgeLabelBackground": "#1e293b",
+    "fontSize": "14px"
+  },
+  "flowchart": { "curve": "basis", "nodeSpacing": 50, "rankSpacing": 80 }
+}}%%
+
+flowchart LR
+    classDef input fill:#0f3460,stroke:#3b82f6,color:#bfdbfe,rx:8,ry:8
+    classDef orchestrate fill:#1e3a5f,stroke:#60a5fa,color:#e0f2fe,rx:8,ry:8
+    classDef researcher fill:#064e3b,stroke:#10b981,color:#d1fae5,rx:8,ry:8
+    classDef planner fill:#3b0764,stroke:#a78bfa,color:#ede9fe,rx:8,ry:8
+    classDef output fill:#431407,stroke:#f97316,color:#ffedd5,rx:8,ry:8
+    classDef backlog fill:#7f1d1d,stroke:#ef4444,color:#fecaca,rx:8,ry:8
+    classDef gate fill:#713f12,stroke:#f59e0b,color:#fef3c7,rx:8,ry:8
+
+    REPO["🏗️ Repository\n──────────────\nApplication Code\nIaC / Bicep / Helm\nConfig & Pipelines\nDockerfiles"]:::input
+
+    subgraph SKILL["  SKILL.md — Orchestrator  "]
+        direction TB
+        CTX["📋 Platform Context\nTarget Regions · Service Inventory\nPriority Rules · WAF Alignment"]:::orchestrate
+    end
+
+    subgraph PHASE12["  Phase 1 + 2 — Task Researcher  "]
+        direction TB
+        R1["🔍 Core Research\nPrompts 0–7\nArchitecture · Dependencies\nZone Assumptions · Data Risk\nFailure Modes · Observability"]:::researcher
+        GATE["⛔ Service Exclusion Gate\nPrompt 1 confirms which services\nare actually used — all others\nare permanently excluded"]:::gate
+        R2["🔍 Service Research\nPrompts 8–19 (conditional)\nAKS · Cosmos DB · SQL\nApp Gateway · Key Vault\nEntra ID · Networking"]:::researcher
+        R1 --> GATE --> R2
+    end
+
+    subgraph PHASE3["  Phase 3 — Consolidation  "]
+        CON["📑 Merge All Findings\nAssign Finding IDs\nP0 → P3 Classification\nFile + Line Evidence Only\nZero Recommendations"]:::researcher
+        RDOC["📄 research-output.md\n22 Findings · Full Evidence\nP0-001 through P2-003"]:::researcher
+        CON --> RDOC
+    end
+
+    subgraph PHASE4["  Phase 4 — Task Planner  "]
+        LOCK["🔒 Evidence Lock-In\nResearch = Fixed Constraints\nPlanner cannot add or soften findings"]:::planner
+        P1["📄 Master Report\nLeadership · Arch Board\nRoadmap + Open Questions"]:::planner
+        P2["📄 Developer Guide\nEngineering Teams\nCode Examples + Patterns"]:::planner
+        P3["📄 Code Assessment\nWAF Alignment · IaC Gaps\nActive/Active Readiness"]:::planner
+        LOCK --> P1 & P2 & P3
+    end
+
+    ADO["📋 ADO Backlog\n──────────────\n1 Epic\n5 Features\n22 User Stories\nP0 → P3 ordered\nAcceptance Criteria\nFully traceable"]:::backlog
+
+    REPO --> SKILL --> PHASE12 --> PHASE3 --> PHASE4
+    RDOC --> LOCK
+    P1 & P2 & P3 --> ADO
+
+    TRACE["🔗 Traceability\nCode line → Finding ID\n→ All 3 documents\n→ ADO User Story"]:::gate
+    RDOC -.->|"one ID\nthree views"| TRACE
+    TRACE -.->|"story traces\nto evidence"| ADO
+
+  </div>
+</div>
+
+<div class="legend">
+  <div class="legend-item"><div class="legend-dot" style="background:#0f3460;border:1.5px solid #3b82f6"></div>Repository Input</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#064e3b;border:1.5px solid #10b981"></div>Task Researcher (evidence-only — no recommendations)</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#3b0764;border:1.5px solid #a78bfa"></div>Task Planner (remediation + code examples)</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#713f12;border:1.5px solid #f59e0b"></div>Gate / Traceability</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#7f1d1d;border:1.5px solid #ef4444"></div>ADO Backlog Output</div>
+</div>
+
+<div class="footer">
+  HVE Resiliency Research Skill · ecommerce-platform · West US 2 → West US Failover Assessment · May 2026
+</div>
+
+<script>
+  mermaid.initialize({
+    startOnLoad: true,
+    theme: 'base',
+    themeVariables: {
+      background: '#1e293b',
+      primaryColor: '#1d4ed8',
+      primaryTextColor: '#f8fafc',
+      primaryBorderColor: '#3b82f6',
+      lineColor: '#64748b',
+      fontSize: '14px'
+    }
+  });
+</script>
+</body>
+</html>

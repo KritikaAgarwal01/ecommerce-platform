@@ -1,0 +1,159 @@
+slide: 5
+title: "Four Phases. One Automated Pipeline."
+section: "Workflow"
+layout: "content"
+
+background:
+  fill: "#0F1117"
+
+elements:
+  # Top accent bar
+  - type: shape
+    shape: rectangle
+    left: 0
+    top: 0
+    width: 13.333
+    height: 0.08
+    fill: "#0078D4"
+
+  # Slide title
+  - type: textbox
+    left: 0.5
+    top: 0.15
+    width: 12.333
+    height: 0.55
+    text: "Four Phases. One Automated Pipeline."
+    font: "Segoe UI"
+    font_size: 28
+    font_color: "#F8F8FC"
+    font_bold: true
+    alignment: left
+
+  # Arrow flow — 4 phases
+  - type: arrow_flow
+    left: 0.5
+    top: 0.88
+    width: 12.333
+    height: 0.9
+    items:
+      - label: "CORE RESEARCH"
+        color: "#0078D4"
+      - label: "SERVICE ANALYSIS"
+        color: "#0078D4"
+      - label: "CONSOLIDATION"
+        color: "#10B981"
+      - label: "PLANNING"
+        color: "#10B981"
+
+  # Phase 1 card
+  - type: card
+    left: 0.5
+    top: 1.98
+    width: 2.958
+    height: 5.2
+    title: "PHASE 1"
+    title_color: "#F8F8FC"
+    title_size: 12
+    title_bold: true
+    accent_bar: true
+    accent_color: "#0078D4"
+    content:
+      - bullet: "Prompts 0–7"
+        color: "#0078D4"
+      - bullet: "Architecture walkthrough"
+        color: "#F8F8FC"
+      - bullet: "Zone failure analysis"
+        color: "#9CA3AF"
+      - bullet: "Dependency inventory"
+        color: "#9CA3AF"
+      - bullet: "State classification"
+        color: "#9CA3AF"
+      - bullet: "Failure mode mapping"
+        color: "#9CA3AF"
+      - bullet: "Cross-service dependencies"
+        color: "#9CA3AF"
+      - bullet: "Shared dependency risks"
+        color: "#9CA3AF"
+      - bullet: "Logging gaps"
+        color: "#9CA3AF"
+
+  # Phase 2 card
+  - type: card
+    left: 3.658
+    top: 1.98
+    width: 2.958
+    height: 5.2
+    title: "PHASE 2"
+    title_color: "#F8F8FC"
+    title_size: 12
+    title_bold: true
+    accent_bar: true
+    accent_color: "#0078D4"
+    content:
+      - bullet: "Prompts 8–19"
+        color: "#0078D4"
+      - bullet: "Service-specific deep dives"
+        color: "#F8F8FC"
+      - bullet: "Only confirmed dependencies analyzed"
+        color: "#9CA3AF"
+      - bullet: "AKS + Istio"
+        color: "#9CA3AF"
+      - bullet: "APIM + App Gateway"
+        color: "#9CA3AF"
+      - bullet: "Cosmos DB + SQL"
+        color: "#9CA3AF"
+      - bullet: "Key Vault + Networking"
+        color: "#9CA3AF"
+      - bullet: "Entra ID + Redis"
+        color: "#9CA3AF"
+
+  # Phase 3 card
+  - type: card
+    left: 6.817
+    top: 1.98
+    width: 2.958
+    height: 5.2
+    title: "PHASE 3"
+    title_color: "#F8F8FC"
+    title_size: 12
+    title_bold: true
+    accent_bar: true
+    accent_color: "#10B981"
+    content:
+      - bullet: "Consolidation prompt"
+        color: "#10B981"
+      - bullet: "Merges all research outputs into a single forensic artifact"
+        color: "#F8F8FC"
+      - bullet: "Evidence-only"
+        color: "#9CA3AF"
+      - bullet: "No recommendations included"
+        color: "#9CA3AF"
+      - bullet: "Single source of truth for planning"
+        color: "#9CA3AF"
+
+  # Phase 4 card
+  - type: card
+    left: 9.975
+    top: 1.98
+    width: 2.958
+    height: 5.2
+    title: "PHASE 4"
+    title_color: "#F8F8FC"
+    title_size: 12
+    title_bold: true
+    accent_bar: true
+    accent_color: "#10B981"
+    content:
+      - bullet: "Planner prompts 0–3"
+        color: "#10B981"
+      - bullet: "Generates Master Report"
+        color: "#F8F8FC"
+      - bullet: "Developer Guide with before/after fixes"
+        color: "#9CA3AF"
+      - bullet: "Code-Level Assessment"
+        color: "#9CA3AF"
+      - bullet: "WAF alignment applied"
+        color: "#9CA3AF"
+
+speaker_notes: |
+  Phase 1 and 2 are strictly evidence-only — no recommendations, no code examples. The AI acts as a forensic analyst. Phase 3 consolidates everything. Phase 4 is where the planning prompts take all the evidence and produce the deliverables the team can act on immediately.

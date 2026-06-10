@@ -1,0 +1,93 @@
+slide: 2
+title: "The Challenge: Resiliency Reviews That Don't Scale"
+section: "Problem"
+layout: "content"
+
+background:
+  fill: "#0F1117"
+
+elements:
+  # Top accent bar
+  - type: shape
+    shape: rectangle
+    left: 0
+    top: 0
+    width: 13.333
+    height: 0.08
+    fill: "#0078D4"
+
+  # Slide title
+  - type: textbox
+    left: 0.5
+    top: 0.15
+    width: 12.333
+    height: 0.55
+    text: "The Challenge: Resiliency Reviews That Don't Scale"
+    font: "Segoe UI"
+    font_size: 28
+    font_color: "#F8F8FC"
+    font_bold: true
+    alignment: left
+
+  # Card 1 — TIME-INTENSIVE (red accent)
+  - type: card
+    left: 0.5
+    top: 0.88
+    width: 3.978
+    height: 6.2
+    title: "TIME-INTENSIVE"
+    title_color: "#F8F8FC"
+    title_size: 14
+    title_bold: true
+    accent_bar: true
+    accent_color: "#EF4444"
+    content:
+      - bullet: "Senior architect required for every review"
+        color: "#F8F8FC"
+      - bullet: "Weeks of manual code analysis"
+        color: "#9CA3AF"
+      - bullet: "30+ services across the platform"
+        color: "#9CA3AF"
+
+  # Card 2 — INCONSISTENT (amber accent)
+  - type: card
+    left: 4.678
+    top: 0.88
+    width: 3.978
+    height: 6.2
+    title: "INCONSISTENT"
+    title_color: "#F8F8FC"
+    title_size: 14
+    title_bold: true
+    accent_bar: true
+    accent_color: "#F59E0B"
+    content:
+      - bullet: "No standard finding format"
+        color: "#F8F8FC"
+      - bullet: "P0 risks buried in prose"
+        color: "#9CA3AF"
+      - bullet: "Evidence lost in email threads"
+        color: "#9CA3AF"
+
+  # Card 3 — DOESN'T SCALE (red accent)
+  - type: card
+    left: 8.856
+    top: 0.88
+    width: 3.978
+    height: 6.2
+    title: "DOESN'T SCALE"
+    title_color: "#F8F8FC"
+    title_size: 14
+    title_bold: true
+    accent_bar: true
+    accent_color: "#EF4444"
+    content:
+      - bullet: "Active/active transition = dozens of repos"
+        color: "#F8F8FC"
+      - bullet: "Each service is different tech stack"
+        color: "#9CA3AF"
+      - bullet: "No shared knowledge base"
+        color: "#9CA3AF"
+
+speaker_notes: |
+  Manual resiliency reviews have three fundamental problems. They take too long, they produce inconsistent outputs that can't be compared across teams, and they simply don't scale when you have 30 or 40 services all moving toward an active/active architecture simultaneously.

@@ -1,0 +1,77 @@
+slide: 4
+title: "The HVE Resiliency Research Skill"
+section: "What It Is"
+layout: "content"
+
+background:
+  fill: "#0F1117"
+
+elements:
+  # Top accent bar
+  - type: shape
+    shape: rectangle
+    left: 0
+    top: 0
+    width: 13.333
+    height: 0.08
+    fill: "#0078D4"
+
+  # Slide title
+  - type: textbox
+    left: 0.5
+    top: 0.15
+    width: 12.333
+    height: 0.55
+    text: "The HVE Resiliency Research Skill"
+    font: "Segoe UI"
+    font_size: 28
+    font_color: "#F8F8FC"
+    font_bold: true
+    alignment: left
+
+  # Left card — WHAT IT IS
+  - type: card
+    left: 0.5
+    top: 0.88
+    width: 6.0
+    height: 6.2
+    title: "WHAT IT IS"
+    title_color: "#F8F8FC"
+    title_size: 14
+    title_bold: true
+    accent_bar: true
+    accent_color: "#0078D4"
+    content:
+      - bullet: "A GitHub Copilot Skill — a structured prompt orchestration framework"
+        color: "#F8F8FC"
+      - bullet: "Lives in the repository alongside the code it analyzes"
+        color: "#9CA3AF"
+      - bullet: "Invoked with a single command: /resiliency-research"
+        color: "#F8F8FC"
+      - bullet: "Automatically routes through 4 phases — no manual prompt selection"
+        color: "#9CA3AF"
+
+  # Right card — WHAT IT PRODUCES
+  - type: card
+    left: 6.833
+    top: 0.88
+    width: 6.0
+    height: 6.2
+    title: "WHAT IT PRODUCES"
+    title_color: "#F8F8FC"
+    title_size: 14
+    title_bold: true
+    accent_bar: true
+    accent_color: "#10B981"
+    content:
+      - bullet: "Consolidated Research Report — evidence-only forensic analysis"
+        color: "#F8F8FC"
+      - bullet: "Master Report — executive-level prioritized findings"
+        color: "#9CA3AF"
+      - bullet: "Developer Guide — before/after code fixes with file+line"
+        color: "#F8F8FC"
+      - bullet: "Code-Level Assessment — WAF-aligned, full finding matrix"
+        color: "#9CA3AF"
+
+speaker_notes: |
+  The skill is a structured prompt orchestration framework built on GitHub Copilot. It lives in the repository, it knows the platform context, and when invoked it runs autonomously through four phases — producing four structured deliverables at the end. No analyst hours required.

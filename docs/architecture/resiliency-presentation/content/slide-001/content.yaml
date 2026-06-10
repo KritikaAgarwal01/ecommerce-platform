@@ -1,0 +1,97 @@
+slide: 1
+title: "AI-Driven Resiliency Research"
+section: "Title"
+layout: "title"
+
+background:
+  fill: "#0F1117"
+
+elements:
+  # Top accent bar
+  - type: shape
+    shape: rectangle
+    left: 0
+    top: 0
+    width: 13.333
+    height: 0.08
+    fill: "#0078D4"
+
+  # Main title
+  - type: textbox
+    left: 0.8
+    top: 1.8
+    width: 11.0
+    height: 1.2
+    text: "AI-Driven Resiliency Research"
+    font: "Segoe UI"
+    font_size: 40
+    font_color: "#F8F8FC"
+    font_bold: true
+    alignment: left
+
+  # Subtitle
+  - type: textbox
+    left: 0.8
+    top: 3.15
+    width: 10.5
+    height: 0.65
+    text: "From Code to Confidence: End-to-End Automation for Architects"
+    font: "Segoe UI"
+    font_size: 20
+    font_color: "#9CA3AF"
+    alignment: left
+
+  # Rich text tagline
+  - type: rich_text
+    left: 0.8
+    top: 3.95
+    width: 11.0
+    height: 0.45
+    segments:
+      - text: "GitHub Copilot Skills"
+        font: "Segoe UI"
+        size: 14
+        color: "#9CA3AF"
+      - text: "  |  "
+        font: "Segoe UI"
+        size: 14
+        color: "#0078D4"
+      - text: "HVE Resiliency Research"
+        font: "Segoe UI"
+        size: 14
+        color: "#9CA3AF"
+      - text: "  |  "
+        font: "Segoe UI"
+        size: 14
+        color: "#0078D4"
+      - text: "ecommerce-platform"
+        font: "Segoe UI"
+        size: 14
+        color: "#9CA3AF"
+
+  # Horizontal divider line
+  - type: shape
+    shape: rectangle
+    left: 0.8
+    top: 2.95
+    width: 6.0
+    height: 0.04
+    fill: "#0078D4"
+
+  # Bottom-left badge — ARCHITECTS AUDIENCE
+  - type: shape
+    shape: rounded_rectangle
+    left: 0.8
+    top: 6.65
+    width: 2.2
+    height: 0.42
+    fill: "#0078D4"
+    corner_radius: 0.06
+    text: "ARCHITECTS AUDIENCE"
+    text_font: "Segoe UI"
+    text_size: 11
+    text_color: "#F8F8FC"
+    text_bold: true
+
+speaker_notes: |
+  Welcome. This session walks through how we automated the entire resiliency review process for a five-service e-commerce platform using GitHub Copilot Skills and structured prompt engineering. By the end, you will understand both what the skill does and why it matters for scaling this practice across every repository.

@@ -1,0 +1,156 @@
+slide: 7
+title: "Applied: ecommerce-platform — Five Services, One Analysis"
+section: "Applied"
+layout: "content"
+
+background:
+  fill: "#0F1117"
+
+elements:
+  # Top accent bar
+  - type: shape
+    shape: rectangle
+    left: 0
+    top: 0
+    width: 13.333
+    height: 0.08
+    fill: "#0078D4"
+
+  # Slide title
+  - type: textbox
+    left: 0.5
+    top: 0.15
+    width: 12.333
+    height: 0.55
+    text: "Applied: ecommerce-platform — Five Services, One Analysis"
+    font: "Segoe UI"
+    font_size: 28
+    font_color: "#F8F8FC"
+    font_bold: true
+    alignment: left
+
+  # Platform services table
+  - type: table
+    left: 0.5
+    top: 0.88
+    width: 12.333
+    height: 4.0
+    columns:
+      - width: 2.1
+      - width: 2.9
+      - width: 3.6
+      - width: 3.733
+    rows:
+      - cells:
+          - text: "Service"
+            font_bold: true
+            fill: "#0078D4"
+            font_color: "#F8F8FC"
+            font_size: 13
+          - text: "Stack"
+            font_bold: true
+            fill: "#0078D4"
+            font_color: "#F8F8FC"
+            font_size: 13
+          - text: "Data Store"
+            font_bold: true
+            fill: "#0078D4"
+            font_color: "#F8F8FC"
+            font_size: 13
+          - text: "Key Role"
+            font_bold: true
+            fill: "#0078D4"
+            font_color: "#F8F8FC"
+            font_size: 13
+      - cells:
+          - text: "cart-service"
+            font_color: "#F8F8FC"
+            fill: "#1A1D27"
+            font_bold: true
+          - text: "Node.js / TypeScript"
+            font_color: "#9CA3AF"
+            fill: "#1A1D27"
+          - text: "Azure Cosmos DB (Serverless)"
+            font_color: "#9CA3AF"
+            fill: "#1A1D27"
+          - text: "Cart state — blocks order creation"
+            font_color: "#F8F8FC"
+            fill: "#1A1D27"
+      - cells:
+          - text: "order-service"
+            font_color: "#F8F8FC"
+            fill: "#12141C"
+            font_bold: true
+          - text: "C# / .NET 8"
+            font_color: "#9CA3AF"
+            fill: "#12141C"
+          - text: "Azure SQL (orders DB)"
+            font_color: "#9CA3AF"
+            fill: "#12141C"
+          - text: "Core transaction orchestrator"
+            font_color: "#F8F8FC"
+            fill: "#12141C"
+      - cells:
+          - text: "payment-service"
+            font_color: "#F8F8FC"
+            fill: "#1A1D27"
+            font_bold: true
+          - text: "C# / .NET 8"
+            font_color: "#9CA3AF"
+            fill: "#1A1D27"
+          - text: "Azure SQL (payments DB)"
+            font_color: "#9CA3AF"
+            fill: "#1A1D27"
+          - text: "Payment processing and refunds"
+            font_color: "#F8F8FC"
+            fill: "#1A1D27"
+      - cells:
+          - text: "reporting-service"
+            font_color: "#F8F8FC"
+            fill: "#12141C"
+            font_bold: true
+          - text: "Node.js / TypeScript"
+            font_color: "#9CA3AF"
+            fill: "#12141C"
+          - text: "Cosmos DB + Azure SQL"
+            font_color: "#9CA3AF"
+            fill: "#12141C"
+          - text: "Operational visibility"
+            font_color: "#F8F8FC"
+            fill: "#12141C"
+      - cells:
+          - text: "gateway-service"
+            font_color: "#F8F8FC"
+            fill: "#1A1D27"
+            font_bold: true
+          - text: "Node.js / TypeScript"
+            font_color: "#9CA3AF"
+            fill: "#1A1D27"
+          - text: "None (reverse proxy)"
+            font_color: "#9CA3AF"
+            fill: "#1A1D27"
+          - text: "External entry point"
+            font_color: "#F8F8FC"
+            fill: "#1A1D27"
+    first_row: true
+
+  # Note card below table
+  - type: card
+    left: 0.5
+    top: 5.05
+    width: 12.333
+    height: 1.95
+    title: "TARGET STATE"
+    title_color: "#F8F8FC"
+    title_size: 12
+    title_bold: true
+    accent_bar: true
+    accent_color: "#F59E0B"
+    content:
+      - bullet: "Target: Active/Active across West US + West US 2 with Global Load Balancer"
+        color: "#F8F8FC"
+      - bullet: "Current: Single region, no zone redundancy, no Global Load Balancer — this is the gap the skill mapped"
+        color: "#9CA3AF"
+
+speaker_notes: |
+  The skill was run against a five-service e-commerce platform. Mixed stacks — C# and Node.js. Multiple data stores. Single region today, with a target state of active/active across two Azure regions. This is a realistic, representative enterprise platform.

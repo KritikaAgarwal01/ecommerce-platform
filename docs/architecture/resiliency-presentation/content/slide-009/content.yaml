@@ -1,0 +1,95 @@
+slide: 9
+title: "From Evidence to Code-Level Remediation — Automatically"
+section: "Remediation"
+layout: "content"
+
+background:
+  fill: "#0F1117"
+
+elements:
+  # Top accent bar
+  - type: shape
+    shape: rectangle
+    left: 0
+    top: 0
+    width: 13.333
+    height: 0.08
+    fill: "#0078D4"
+
+  # Slide title
+  - type: textbox
+    left: 0.5
+    top: 0.15
+    width: 12.333
+    height: 0.55
+    text: "From Evidence to Code-Level Remediation — Automatically"
+    font: "Segoe UI"
+    font_size: 28
+    font_color: "#F8F8FC"
+    font_bold: true
+    alignment: left
+
+  # Left card — RESEARCH OUTPUT
+  - type: card
+    left: 0.5
+    top: 0.88
+    width: 6.0
+    height: 4.7
+    title: "RESEARCH OUTPUT — Evidence"
+    title_color: "#F8F8FC"
+    title_size: 13
+    title_bold: true
+    accent_bar: true
+    accent_color: "#EF4444"
+    content:
+      - bullet: "Finding: No retry policy on PaymentClient HTTP call"
+        color: "#F8F8FC"
+      - bullet: "File: src/order-service/Program.cs"
+        color: "#0078D4"
+      - bullet: "Line: 18–27"
+        color: "#0078D4"
+      - bullet: "Priority: P0"
+        color: "#EF4444"
+      - bullet: "Risk: Pod rescheduling during zone failure causes unhandled exception, partial order write, no recovery path"
+        color: "#9CA3AF"
+
+  # Right card — PLANNING OUTPUT
+  - type: card
+    left: 6.833
+    top: 0.88
+    width: 6.0
+    height: 4.7
+    title: "PLANNING OUTPUT — Fix"
+    title_color: "#F8F8FC"
+    title_size: 13
+    title_bold: true
+    accent_bar: true
+    accent_color: "#10B981"
+    content:
+      - bullet: "Pattern: AddStandardResilienceHandler"
+        color: "#10B981"
+      - bullet: "Before: Plain AddHttpClient with BaseAddress only — no retry, no timeout, no circuit breaker"
+        color: "#9CA3AF"
+      - bullet: "After: Retry 3x with exponential backoff, circuit breaker at 50% failure threshold, per-attempt timeout 5s"
+        color: "#F8F8FC"
+      - bullet: "Configurable via ConfigMap — no hard-coded thresholds"
+        color: "#9CA3AF"
+
+  # Note card below
+  - type: card
+    left: 0.5
+    top: 5.75
+    width: 12.333
+    height: 1.55
+    title: "DEVELOPER GUIDE DELIVERY"
+    title_color: "#F8F8FC"
+    title_size: 12
+    title_bold: true
+    accent_bar: true
+    accent_color: "#0078D4"
+    content:
+      - bullet: "The Developer Guide delivers before/after code blocks for every P0 and P1 finding. Customer teams own implementation — the guide is self-contained."
+        color: "#9CA3AF"
+
+speaker_notes: |
+  The planning phase takes the research evidence and generates before-and-after code patterns for every P0 and P1 finding. This is the part that normally takes weeks of architect time. The customer owns all implementation — our role is to make the guidance so clear and specific that any engineer on the team can pick it up and execute independently.

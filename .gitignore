@@ -1,0 +1,31 @@
+# Dependencies
+node_modules/
+dist/
+
+# .NET
+bin/
+obj/
+*.user
+*.suo
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+.env.local
+*.local
+
+# Build output
+coverage/
+*.tgz
+
+# Azure
+.azure/

@@ -1,0 +1,108 @@
+slide: 14
+title: "The Evidence Gap — A Real Example"
+layout: content
+background:
+  fill: "#0F1117"
+elements:
+  - type: shape
+    shape: rectangle
+    left: 0
+    top: 0
+    width: 13.333
+    height: 0.08
+    fill: "#0078D4"
+
+  - type: textbox
+    left: 0.5
+    top: 0.18
+    width: 12.0
+    height: 0.55
+    text: "The Evidence Gap — Same Question, Very Different Answer"
+    font: "Segoe UI"
+    font_size: 26
+    font_color: "#F8F8FC"
+    font_bold: true
+    alignment: left
+
+  - type: textbox
+    left: 0.5
+    top: 0.85
+    width: 12.0
+    height: 0.38
+    text: "Prompt: \"Does the order service have retry logic on its payment call?\""
+    font: "Segoe UI"
+    font_size: 14
+    font_color: "#9CA3AF"
+    alignment: left
+
+  - type: card
+    left: 0.4
+    top: 1.35
+    width: 5.9
+    height: 4.8
+    title: "DEFAULT GITHUB COPILOT"
+    title_color: "#F8F8FC"
+    title_size: 13
+    title_bold: true
+    accent_bar: true
+    accent_color: "#EF4444"
+    content:
+      - bullet: "\"The order service uses HttpClient to call the payment service. You should consider adding retry logic using Polly or Microsoft.Extensions.Http.Resilience to handle transient failures.\""
+        color: "#F8F8FC"
+      - bullet: "─────────────────────────────"
+        color: "#3D3D45"
+      - bullet: "No file cited"
+        color: "#EF4444"
+      - bullet: "No line number cited"
+        color: "#EF4444"
+      - bullet: "No priority assigned"
+        color: "#EF4444"
+      - bullet: "Recommendation mixed with finding"
+        color: "#EF4444"
+      - bullet: "Cannot survive architecture review"
+        color: "#EF4444"
+      - bullet: "Different engineer gets different answer"
+        color: "#EF4444"
+
+  - type: card
+    left: 7.0
+    top: 1.35
+    width: 5.9
+    height: 4.8
+    title: "HVE TASK RESEARCHER"
+    title_color: "#F8F8FC"
+    title_size: 13
+    title_bold: true
+    accent_bar: true
+    accent_color: "#10B981"
+    content:
+      - bullet: "Finding: No resilience policy on PaymentClient HTTP registration"
+        color: "#F8F8FC"
+      - bullet: "Priority: P0 — Failover-Blocking"
+        color: "#EF4444"
+      - bullet: "File: src/order-service/Program.cs"
+        color: "#10B981"
+      - bullet: "Lines: 18–27"
+        color: "#10B981"
+      - bullet: "Evidence: AddHttpClient<IPaymentClient> sets only BaseAddress — no timeout, no retry, no circuit breaker"
+        color: "#F8F8FC"
+      - bullet: "Risk: Pod rescheduling during zone failure causes unhandled exception → partial order write → no recovery"
+        color: "#F59E0B"
+      - bullet: "Existing mitigations: None found"
+        color: "#9CA3AF"
+      - bullet: "Recommendation: None (evidence-only phase)"
+        color: "#9CA3AF"
+
+  - type: textbox
+    left: 6.2
+    top: 1.35
+    width: 0.6
+    height: 4.8
+    text: "VS"
+    font: "Segoe UI"
+    font_size: 22
+    font_color: "#0078D4"
+    font_bold: true
+    alignment: center
+
+speaker_notes: "This is the evidence gap in one slide. Both responses answer the same question. The default Copilot response is useful — but it's a suggestion, not evidence. An architect or a PM can't track it, can't verify it, can't link it to a work item, and can't prove it was resolved after a fix. The HVE response is traceable end-to-end: file, line, priority, risk statement, no recommendation bleed-through. That's the difference between a chat and an audit trail."

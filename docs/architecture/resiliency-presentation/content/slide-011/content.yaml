@@ -1,0 +1,129 @@
+slide: 11
+title: "The Automation Story: What Changed"
+section: "Value"
+layout: "content"
+
+background:
+  fill: "#0F1117"
+
+elements:
+  # Top accent bar
+  - type: shape
+    shape: rectangle
+    left: 0
+    top: 0
+    width: 13.333
+    height: 0.08
+    fill: "#0078D4"
+
+  # Slide title
+  - type: textbox
+    left: 0.5
+    top: 0.15
+    width: 12.333
+    height: 0.55
+    text: "The Automation Story: What Changed"
+    font: "Segoe UI"
+    font_size: 28
+    font_color: "#F8F8FC"
+    font_bold: true
+    alignment: left
+
+  # Comparison table
+  - type: table
+    left: 0.5
+    top: 0.88
+    width: 12.333
+    height: 6.3
+    columns:
+      - width: 2.5
+      - width: 4.9
+      - width: 4.933
+    rows:
+      - cells:
+          - text: "Dimension"
+            font_bold: true
+            fill: "#0078D4"
+            font_color: "#F8F8FC"
+            font_size: 13
+          - text: "Before (Manual)"
+            font_bold: true
+            fill: "#0078D4"
+            font_color: "#F8F8FC"
+            font_size: 13
+          - text: "After (Skill)"
+            font_bold: true
+            fill: "#0078D4"
+            font_color: "#F8F8FC"
+            font_size: 13
+      - cells:
+          - text: "Time to complete"
+            font_color: "#F8F8FC"
+            fill: "#1A1D27"
+            font_bold: true
+          - text: "3–4 weeks (senior architect)"
+            font_color: "#EF4444"
+            fill: "#1A1D27"
+          - text: "~1 hour (any engineer)"
+            font_color: "#10B981"
+            fill: "#1A1D27"
+      - cells:
+          - text: "Evidence quality"
+            font_color: "#F8F8FC"
+            fill: "#12141C"
+            font_bold: true
+          - text: "Varies by reviewer"
+            font_color: "#F59E0B"
+            fill: "#12141C"
+          - text: "100% file+line cited"
+            font_color: "#10B981"
+            fill: "#12141C"
+      - cells:
+          - text: "Finding consistency"
+            font_color: "#F8F8FC"
+            fill: "#1A1D27"
+            font_bold: true
+          - text: "Prose, no standard format"
+            font_color: "#EF4444"
+            fill: "#1A1D27"
+          - text: "P0→P3, structured JSON-ready"
+            font_color: "#10B981"
+            fill: "#1A1D27"
+      - cells:
+          - text: "Output artifacts"
+            font_color: "#F8F8FC"
+            fill: "#12141C"
+            font_bold: true
+          - text: "1 Word document"
+            font_color: "#F59E0B"
+            fill: "#12141C"
+          - text: "4 structured deliverables"
+            font_color: "#10B981"
+            fill: "#12141C"
+      - cells:
+          - text: "Reproducibility"
+            font_color: "#F8F8FC"
+            fill: "#1A1D27"
+            font_bold: true
+          - text: "Not repeatable"
+            font_color: "#EF4444"
+            fill: "#1A1D27"
+          - text: "Run again after code changes"
+            font_color: "#10B981"
+            fill: "#1A1D27"
+      - cells:
+          - text: "Scale"
+            font_color: "#F8F8FC"
+            fill: "#12141C"
+            font_bold: true
+          - text: "1 repo per engagement"
+            font_color: "#EF4444"
+            fill: "#12141C"
+          - text: "Any repo, any stack"
+            font_color: "#10B981"
+            fill: "#12141C"
+    first_row: true
+    horz_banding: false
+
+speaker_notes: |
+  This table captures what actually changed. The most important dimension is reproducibility — the skill can be re-run after code changes to verify findings are resolved. That closes the loop between research, implementation, and validation in a way that manual reviews simply cannot.

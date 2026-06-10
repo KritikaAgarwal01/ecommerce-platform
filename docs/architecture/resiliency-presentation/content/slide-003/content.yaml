@@ -1,0 +1,97 @@
+slide: 3
+title: "The Vision: Consistent, Automated, Repeatable"
+section: "Vision"
+layout: "content"
+
+background:
+  fill: "#0F1117"
+
+elements:
+  # Top accent bar
+  - type: shape
+    shape: rectangle
+    left: 0
+    top: 0
+    width: 13.333
+    height: 0.08
+    fill: "#0078D4"
+
+  # Slide title
+  - type: textbox
+    left: 0.5
+    top: 0.15
+    width: 12.333
+    height: 0.55
+    text: "The Vision: Consistent, Automated, Repeatable"
+    font: "Segoe UI"
+    font_size: 28
+    font_color: "#F8F8FC"
+    font_bold: true
+    alignment: left
+
+  # Blue left border for quote card
+  - type: shape
+    shape: rectangle
+    left: 0.5
+    top: 0.9
+    width: 0.06
+    height: 1.9
+    fill: "#0078D4"
+
+  # Central quote card background
+  - type: shape
+    shape: rectangle
+    left: 0.56
+    top: 0.9
+    width: 12.273
+    height: 1.9
+    fill: "#1A1D27"
+
+  # Quote text
+  - type: textbox
+    left: 0.85
+    top: 0.98
+    width: 11.7
+    height: 1.7
+    text: "What if every repository could be analyzed for resiliency risk — consistently, in minutes — by any engineer on the team?"
+    font: "Segoe UI"
+    font_size: 22
+    font_color: "#F8F8FC"
+    alignment: left
+    vertical_anchor: middle
+
+  # Step 1 — Any Repo
+  - type: numbered_step
+    left: 0.5
+    top: 3.1
+    width: 3.978
+    height: 3.8
+    number: 1
+    label: "Any Repo"
+    description: "Point the skill at any repository"
+    accent_color: "#0078D4"
+
+  # Step 2 — Any Stack
+  - type: numbered_step
+    left: 4.678
+    top: 3.1
+    width: 3.978
+    height: 3.8
+    number: 2
+    label: "Any Stack"
+    description: "C#, Node.js, Python, IaC — all covered"
+    accent_color: "#0078D4"
+
+  # Step 3 — One Output
+  - type: numbered_step
+    left: 8.856
+    top: 3.1
+    width: 3.978
+    height: 3.8
+    number: 3
+    label: "One Output"
+    description: "P0→P3 findings with file+line evidence"
+    accent_color: "#10B981"
+
+speaker_notes: |
+  The vision was simple: make the highest-quality resiliency review available to any engineer on any team, for any repository, in a repeatable and auditable way. Not a checklist — a full evidence-grounded analysis that produces actionable, prioritized output.

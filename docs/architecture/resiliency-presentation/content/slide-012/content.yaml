@@ -1,0 +1,95 @@
+slide: 12
+title: "What You Can Do With This Today"
+section: "Call to Action"
+layout: "content"
+
+background:
+  fill: "#0F1117"
+
+elements:
+  # Top accent bar
+  - type: shape
+    shape: rectangle
+    left: 0
+    top: 0
+    width: 13.333
+    height: 0.08
+    fill: "#0078D4"
+
+  # Slide title
+  - type: textbox
+    left: 0.5
+    top: 0.15
+    width: 12.333
+    height: 0.55
+    text: "What You Can Do With This Today"
+    font: "Segoe UI"
+    font_size: 28
+    font_color: "#F8F8FC"
+    font_bold: true
+    alignment: left
+
+  # Step 1 — Add the Skill
+  - type: numbered_step
+    left: 0.5
+    top: 0.9
+    width: 6.067
+    height: 2.0
+    number: 1
+    label: "Add the Skill to Your Repository"
+    description: "Copy the skill, prompts, and platform context to your repo's .github/ folder"
+    accent_color: "#0078D4"
+
+  # Step 2 — Update Platform Context
+  - type: numbered_step
+    left: 6.767
+    top: 0.9
+    width: 6.066
+    height: 2.0
+    number: 2
+    label: "Update Platform Context"
+    description: "Edit platform-context.instructions.md with your customer name, regions, and target state"
+    accent_color: "#0078D4"
+
+  # Step 3 — Run the Skill
+  - type: numbered_step
+    left: 0.5
+    top: 3.1
+    width: 6.067
+    height: 2.0
+    number: 3
+    label: "Run /resiliency-research"
+    description: "Point Copilot at your repository and let the skill execute all four phases automatically"
+    accent_color: "#10B981"
+
+  # Step 4 — Deliver Reports
+  - type: numbered_step
+    left: 6.767
+    top: 3.1
+    width: 6.066
+    height: 2.0
+    number: 4
+    label: "Deliver Three Reports"
+    description: "Share Master Report with leadership, Developer Guide with engineering, Code-Level Assessment with architecture board"
+    accent_color: "#10B981"
+
+  # Bottom CTA card
+  - type: card
+    left: 0.5
+    top: 5.3
+    width: 12.333
+    height: 1.95
+    title: "REUSABLE ACROSS EVERY ENGAGEMENT"
+    title_color: "#F8F8FC"
+    title_size: 12
+    title_bold: true
+    accent_bar: true
+    accent_color: "#0078D4"
+    content:
+      - bullet: "The skill is designed to be reused across repositories. Add new service-specific prompts as your platform grows."
+        color: "#F8F8FC"
+      - bullet: "Re-run after each sprint to verify resolutions. One skill — every repository, every customer."
+        color: "#9CA3AF"
+
+speaker_notes: |
+  The call to action is simple. The skill is a template. You copy it, update the platform context for your customer, and run it. The entire framework — prompts, instructions, skill orchestration — is designed to be carried from engagement to engagement with minimal customization.
