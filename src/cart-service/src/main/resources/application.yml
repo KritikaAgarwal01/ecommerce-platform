@@ -1,0 +1,25 @@
+server:
+  port: ${PORT:3000}
+
+spring:
+  application:
+    name: cart-service
+
+azure:
+  cosmos:
+    endpoint: ${COSMOS_DB_ENDPOINT}
+    database: ${COSMOS_DB_DATABASE:ecommerce}
+    container: ${COSMOS_DB_CONTAINER:carts}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+      base-path: /
+      path-mapping:
+        health: health
+  endpoint:
+    health:
+      probes:
+        enabled: true

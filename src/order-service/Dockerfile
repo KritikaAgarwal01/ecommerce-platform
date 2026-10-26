@@ -1,20 +1,14 @@
-FROM mcr.microsoft.com/dotnet/aspnet:8.0-alpine AS base
-WORKDIR /app
-EXPOSE 8080
+FROM maven:3.9.9-eclipse-temurin-21-alpine AS build
+WORKDIR /workspace
+COPY pom.xml .
+COPY src/order-service/pom.xml src/order-service/pom.xml
+COPY src/order-service/src src/order-service/src
+RUN mvn -f src/order-service/pom.xml -DskipTests package
 
-FROM mcr.microsoft.com/dotnet/sdk:8.0-alpine AS build
-WORKDIR /src
-COPY OrderService.csproj .
-RUN dotnet restore
-COPY . .
-RUN dotnet build -c Release -o /app/build
-
-FROM build AS publish
-RUN dotnet publish -c Release -o /app/publish /p:UseAppHost=false
-
-FROM base AS final
+FROM eclipse-temurin:21-jre-alpine
 WORKDIR /app
 RUN addgroup -g 1001 appgroup && adduser -u 1001 -G appgroup -s /bin/sh -D appuser
-COPY --from=publish /app/publish .
+COPY --from=build /workspace/src/order-service/target/order-service-1.0.0.jar app.jar
 USER appuser
-ENTRYPOINT ["dotnet", "OrderService.dll"]
+EXPOSE 8080
+ENTRYPOINT ["java", "-jar", "app.jar"]

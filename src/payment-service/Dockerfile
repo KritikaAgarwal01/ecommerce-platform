@@ -1,20 +1,14 @@
-FROM mcr.microsoft.com/dotnet/aspnet:8.0-alpine AS base
-WORKDIR /app
-EXPOSE 8080
+FROM maven:3.9.9-eclipse-temurin-21-alpine AS build
+WORKDIR /workspace
+COPY pom.xml .
+COPY src/payment-service/pom.xml src/payment-service/pom.xml
+COPY src/payment-service/src src/payment-service/src
+RUN mvn -f src/payment-service/pom.xml -DskipTests package
 
-FROM mcr.microsoft.com/dotnet/sdk:8.0-alpine AS build
-WORKDIR /src
-COPY PaymentService.csproj .
-RUN dotnet restore
-COPY . .
-RUN dotnet build -c Release -o /app/build
-
-FROM build AS publish
-RUN dotnet publish -c Release -o /app/publish /p:UseAppHost=false
-
-FROM base AS final
+FROM eclipse-temurin:21-jre-alpine
 WORKDIR /app
 RUN addgroup -g 1001 appgroup && adduser -u 1001 -G appgroup -s /bin/sh -D appuser
-COPY --from=publish /app/publish .
+COPY --from=build /workspace/src/payment-service/target/payment-service-1.0.0.jar app.jar
 USER appuser
-ENTRYPOINT ["dotnet", "PaymentService.dll"]
+EXPOSE 8080
+ENTRYPOINT ["java", "-jar", "app.jar"]

@@ -1,4 +1,9 @@
-# Dependencies
+# Java / Maven
+target/
+*.class
+*.jar
+
+# Legacy dependencies
 node_modules/
 dist/
 

@@ -1,4 +1,7 @@
-# Architecture Overview
+---
+title: Architecture Overview
+description: Azure deployment and service architecture for the Java e-commerce platform
+---
 
 ## High-Level Architecture
 
@@ -23,7 +26,7 @@
 │  │  ┌──────────┐ ┌──────────┐ ┌──────────┐ ┌──────────┐           │  │
 │  │  │  Gateway │ │   Cart   │ │ Payment  │ │  Order   │           │  │
 │  │  │ Service  │ │ Service  │ │ Service  │ │ Service  │           │  │
-│  │  │ (Node)   │ │ (Node)   │ │ (.NET)   │ │ (.NET)   │           │  │
+│  │  │ (Java)   │ │ (Java)   │ │ (Java)   │ │ (Java)   │           │  │
 │  │  └────┬─────┘ └────┬─────┘ └────┬─────┘ └────┬─────┘           │  │
 │  │       │             │            │             │                  │  │
 │  │  ┌────┴─────┐      │            │        ┌────┴─────┐           │  │
@@ -71,7 +74,7 @@
 | Order → Payment | Payment Service | Synchronous | HTTP (internal) |
 | Order → Cart | Cart Service | Synchronous | HTTP (internal) |
 | Reporting → Cosmos DB | Data read | Direct query | SDK |
-| Reporting → SQL Server | Data read | Direct query | ADO.NET/ODBC |
+| Reporting → SQL Server | Data read | Direct query | Spring JDBC |
 
 ### Data Ownership
 

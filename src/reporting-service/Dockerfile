@@ -1,17 +1,14 @@
-FROM node:20-alpine AS build
-WORKDIR /app
-COPY package*.json ./
-RUN npm ci
-COPY tsconfig.json ./
-COPY src ./src
-RUN npm run build
+FROM maven:3.9.9-eclipse-temurin-21-alpine AS build
+WORKDIR /workspace
+COPY pom.xml .
+COPY src/reporting-service/pom.xml src/reporting-service/pom.xml
+COPY src/reporting-service/src src/reporting-service/src
+RUN mvn -f src/reporting-service/pom.xml -DskipTests package
 
-FROM node:20-alpine
+FROM eclipse-temurin:21-jre-alpine
 WORKDIR /app
 RUN addgroup -g 1001 appgroup && adduser -u 1001 -G appgroup -s /bin/sh -D appuser
-COPY --from=build /app/dist ./dist
-COPY --from=build /app/node_modules ./node_modules
-COPY package*.json ./
+COPY --from=build /workspace/src/reporting-service/target/reporting-service-1.0.0.jar app.jar
 USER appuser
 EXPOSE 3000
-CMD ["node", "dist/index.js"]
+ENTRYPOINT ["java", "-jar", "app.jar"]
